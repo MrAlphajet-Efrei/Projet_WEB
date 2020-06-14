@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>La Team</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+
+            .team-section{
+                overflow: hidden;
+                text-align: center;
+                background: #0d0f1b;
+                padding: 60px;
+            }
+
+            .team-section h1{
+                text-transform: uppercase;
+                margin-bottom: 60px;
+                color: white;
+                font-size: 40px;
+            }
+
+            .border{
+                display: block;
+                margin: auto;
+                width: 160px;
+                height: 3px;
+                background: #3498db;
+                margin-bottom: 40px;
+            }
+
+            .ps a{
+                display: inline-block;
+                margin: 0 30px;
+                width: 160px;
+                height: 160px;
+                overflow: hidden;
+                border-radius: 50%;
+            }
+
+            .ps a img{
+                width: 100%;
+                filter: grayscale(100%);
+                transition: 0.4% all;
+            }
+
+            .ps a:hover img{
+                filter:none;
+            }
+
+            .section{
+                width: 600px;
+                margin: auto;
+                font-size: 20px;
+                color: white;
+                text-align: justify;
+                height: 0;
+                overflow: hidden;
+            }
+
+            .name{
+                display: block;
+                margin-bottom: 30px;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 22px;
+            }
+
+            .section:target{
+                height: auto;
+            }
+        </style>
+    </head>
+</html>
+
+<div class="team-section">
+    <h1>Notre Team</h1>
+    <span class="border"></span>
+    <div class="ps">
+        <a href="#p1"><img src="photo1.png" alt=""></a>
+        <a href="#p2"><img src="photo2.png" alt=""></a>
+        <a href="#p3"><img src="photo3.png" alt=""></a>
+    </div>
+
+    <div class="section" id="p1">
+        <span class="name">Yannat Yannick</span>
+        <span class="border"></span>
+        <p>
+            100% Algérien, ayant grandi dans un environnement hostile, 
+            j’ai su m’adapter à chaque situation et ainsi développer des reflex qui m’ont permis de survire. 
+            C’est pourquoi je suis apte à vous donner les bons conseils pour faire de vos chats de VRAI combattant.
+        </p>
+    </div>
+
+    <div class="section" id="p2">
+        <span class="name">Lahaye Emeline</span>
+        <span class="border"></span>
+        <p>
+            Casper le fantôme s’est reconverti en maquilleuse (professionnelle) qui n’aime que le rouge.
+            Vos chats seront les meilleurs spartiates après leur relooking par mes doigts de fée (enfin fantôme du coup).
+        </p>
+    </div>
+
+    <div class="section" id="p3">
+        <span class="name">Fadli Wassim</span>
+        <span class="border"></span>
+        <p>
+            Jeune milliardaire en devenir, tout moyen est bon pour se faire de l'argent.
+            Même si l'hétique n'est pas toujours au rendez-vous, d'où ce site pour entrainer vos chats
+            à devenir de vrais gladiateurs.
+            Chatons quel est votre métié ? Miaou Miaou Miaou !
+        </p>
+    </div>
+</div>
+

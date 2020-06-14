@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <title> Play </title>
+   <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Luna";
+      }
+
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:#0d0f1b;
+        min-height: 100vh;
+      }
+
+      button{
+         position: relative;
+        display:inline-block;
+        padding:6px 15px;
+        text-decoration: none;
+        background: #2196f3;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        overflow: hidden;
+        transition: 0.5s;
+        z-index: 1;
+        border : none;
+        margin-left: 5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+      
+      .selected{
+          z-index: 1000;
+          background: #ff3f81;
+          opacity: 1;
+      }
+
+      .ask, h1{
+        color : white;
+        text-align: center;
+      }
+
+
+
+
+   </style>
+ </head>
+ <body>
+     <div id="qcm"></div>
+     <script>
+         const askList = [
+  {
+    ask: "Quel chat a été rendue célèbre grâce à Harry Potter ?",
+    res: ["abyssin", "chat de Pallas", "Maine coon"],
+    good: 2
+  },
+  {
+    ask: "Quel genre de chat combattant nous permettrai de gagner la coupe du monde de football ?",
+    res: ["Le Vif ", "The Rock", "Le smart"],
+    good: 0
+  },
+  {
+    ask: "Quel chat est aussi appeler le Manul ?",
+    res: ["Le Savannah", "Le chat de Pallas", "Le siamois"],
+    good: 1
+  },
+  {
+    ask: "Lequel de ce chat est le plus ancien des chats domestique ?",
+    res: ["Le chat de Pallas", "Le British shorthair", "L’abyssin"],
+    good: 2
+  },
+  {
+    ask: "Pourquoi un chat doit-il pratiquer l’exercice de la mâchoire absolue ?",
+    res: ["Pour mieux manger", "Pour ressembler à ses cousins félins", "Pour être bg"],
+    good: 1
+  },
+]
+
+const qcm = document.getElementById("qcm")
+const results = []
+
+// pour chaque question
+for(const askItem of askList){
+  // le conteneur de la question
+  const askElement = document.createElement("div")
+  askElement.className = "ask"
+
+  // on insert le texte de la question
+  const ask = document.createElement("h2")
+  ask.innerHTML = askItem.ask
+  askElement.appendChild(ask)
+
+  // on prépare la div qui contient les choix 
+  const choices = document.createElement("div")
+  choices.className = "choices"
+  askElement.appendChild(choices)
+
+  // pour chaque choix possible
+  for(const res of askItem.res){
+    // créer un bouton dans la div.choices
+    const resElement = document.createElement("button")
+    resElement.innerHTML = res
+    resElement.onclick = (function() {
+      results.push(this.askItem.res[this.askItem.good] === res)
+      const buttons = this.askElement.querySelectorAll("button")
+      for(const button of Array.from(buttons)){
+        button.onclick = null
+        if(button.innerHTML === this.res)
+          button.className = "selected"
+}
+      if(results.length >= askList.length){
+        const goodRes = results.filter(r=>r).length
+        if(goodRes === 0) qcm.innerHTML = `<h1> c'est honteux ton niveau... ${goodRes} sur ${askList.length} respecte nous.</h1>`
+        else if(goodRes === 1) qcm.innerHTML = `<h1> bon... ${goodRes} sur ${askList.length} on a déjà vu mieux</h1>`
+        else if(goodRes === 2) qcm.innerHTML = `<h1> bon... ${goodRes} sur ${askList.length} ta note se rapporche dangeureusement de ma moyenne en C++</h1>`
+        else if(goodRes === 3) qcm.innerHTML = `<h1> C'est pas si mal ! ${goodRes} sur ${askList.length} je t'invite à relire les articles dans le doute</h1>`
+        else if (goodRes === 4) qcm.innerHTML = `<h1> Bravo ! ${goodRes} sur ${askList.length} nul doute que tu sera un bon maitre pour ton chat.</h1>`
+        else if (goodRes === 5) qcm.innerHTML = `<h1> Mais quel homme !! ${goodRes} sur ${askList.length} tu es juste parfait ! .</h1>`
+      }
+    }).bind({ askItem, res, askElement})
+    choices.appendChild(resElement)
+  }
+  qcm.appendChild(askElement)
+}
+
+     </script>
+ </body>
+</html>

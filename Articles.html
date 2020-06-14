@@ -1,0 +1,179 @@
+﻿<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Form</title>
+        <style>
+
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Luna";
+            }
+
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background:#0d0f1b;
+                min-height: 100vh;
+            }
+
+            .containers{
+                position:relative;
+                width: 1000px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin: 20px;
+            }
+
+            .containers .card{
+                position: relative;
+                height: 250px;
+                background: #fff;
+                display: flex;
+                width: 45%;
+                margin: 30px 0;
+                border-radius: 20px;
+            }
+            
+            .containers .card .imgBx{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;   
+                background: #fd9526;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                transition: 0.5s ease-in-out;
+                border-radius: 20px;
+                box-shadow: 6px 6px 12px black;
+            }
+
+            .containers .card:hover .imgBx{
+                width: 150px;
+                height: 150px;
+                left: -75px;
+                top: calc(50% - 75px);
+                transition: 0.5s ease-in-out;
+                background: #80b6e4;
+            }
+
+            .containers .card .imgBx:before{
+                content: attr(data-text);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 6em;
+                color: rgba(255,255,255,.05);
+                font-weight: 700;
+            }
+
+            .containers .card .imgBx img{
+                max-width: 100px;
+                transition: 0.5s ease-in-out;
+            }
+
+            .containers .card:hover .imgBx img{
+                max-width: 75px;
+            }
+
+            .containers .card .content{
+                position: absolute;
+                right: 0;
+                width: calc(100% - 75px);
+                height: 100%;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .containers .card .content h3{
+                margin-bottom: 5px;
+                font-size: 24px; 
+            }
+
+            .containers .card .content a{
+                display: inline-block;
+                margin-top: 10px;
+                padding: 5px 10px;
+                background: #0d0f1b;
+                text-decoration: none;
+                color: #fff;
+            }
+
+        </style>
+    
+    </head>
+    <body>
+        <div class="containers">
+            <div class="card">
+                <div class="imgBx" data-text="Nourriture">
+                <img src="eat.png">
+            </div>
+            <div class="content">
+                <div>
+                    <h3>Nourriture</h3>
+                    <p>Tout ce que votre chat peut trouver. Dans la rue, dans les gouttières, les bennes à ordures…
+                        Accessoirement quelques croquettes Purina ou des pâtées Sheba, si votre chat perd ses combats (ce qui ne devrait pas arriver).</p>
+                    <a href="#">Suite</a>
+                </div>
+            </div>
+        </div>
+   
+
+    <div class="card">
+        <div class="imgBx" data-text="Sport">
+        <img src="sport.png">
+    </div>
+    <div class="content">
+        <div>
+            <h3>Sport</h3>
+            <p>Afin d’en faire un vrai combattant, vous devez garder une relation de maître et disciple avec lui, 
+                vous devez le pousser au-delà de ses limites et le mettre constamment à l’épreuve. </p>
+            <a href="#">Suite</a>
+        </div>
+    </div>
+    </div>
+
+<div class="card">
+    <div class="imgBx" data-text="Dressage">
+    <img src="school.png">
+</div>
+<div class="content">
+    <div>
+        <h3>Dressage</h3>
+        <p>Surtout pas de câlins, cela peut l’attendrir. Lui offrir quelques jouets (un poulet mort, un rat vivant,…) pour son entraînement est conseillé.
+            Ne pas oublier la douche quotidienne, pour l’endurcir.</p>
+        <a href="#">Suite</a>
+    </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="imgBx" data-text="Races">
+    <img src="infini.png">
+</div>
+<div class="content">
+    <div>
+        <h3>Races</h3>
+        <p>La race de votre chat est la caractéristique principale d’un grand combattant.
+            Chaque chat vient de la famille des Felis Linneaus, mais tous ne sont pas de bons spartiates.
+            Chat précieux ou chat de gouttière, on vous aide à choisir juste ici.</p>
+        <a href="#">Suite</a>
+    </div>
+</div>
+</div>
+</div>
+
+    </body>  
+</html>

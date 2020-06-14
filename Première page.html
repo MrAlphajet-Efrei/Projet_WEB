@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cat</title>
+        <style>
+            html{
+                height: 100%;
+                overflow : hidden;
+
+            }
+
+            body{
+                color : #fff;
+                margin : 0;
+                padding : 0;
+                perspective: 1px;
+                transform-style: preserve-3d;
+                height:100%;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                font-family: "Luna";
+            }
+
+            header{
+                box-sizing: border-box;
+                min-height: 100vh;
+                padding : 30vw 0 5vw;
+                position : relative;
+                transform-style: inherit;
+                width: 100vw;
+            }
+
+            header h1{
+                margin-top: -100px;
+            }
+
+            header, header:before{
+                background: 50% 50% / cover;
+
+            }
+
+            header::before{
+                bottom: 0;
+                content:"";
+                left:0;
+                position:absolute;
+                right:0;
+                top:0;
+                display: block;
+                background-image: url(chatwallpaper.jpg);
+                background-size: cover;
+                transform-origin: center center 0;
+                transform: translateZ(-1px) scale(2);
+                z-index: -1;
+                min-height: 100vh;      
+            }
+
+            header *{
+                font-weight: normal;
+                letter-spacing: 0.2em;
+                text-align: center;
+                margin: 0;
+                padding: 1em 0;
+            }
+
+            .container{
+                z-index: 2;
+                position: absolute;
+                top: 100vh;
+                background: #0e111f;
+                line-height: 30px;
+                font-weight: lighter;
+                padding: 40px;
+                color: grey;
+            }
+
+            p{
+                text-align: center;
+            }
+
+            a{
+                position: relative;
+                display:inline-block;
+                padding:6px 15px;
+                text-decoration: none;
+                background: #2196f3;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                overflow: hidden;
+                transition: 0.5s;
+                z-index: 1;
+            }
+
+            a:hover{
+                transform: scale(1.4);
+                z-index: 1000;
+                background: #ff3f81;
+                opacity: 1;
+            }
+
+            a:before{
+                content:'';
+                position:absolute;
+                top: 0;
+                left: -100px;
+                width: 80px;
+                height: 100%;
+                background: linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent);
+                transform: skewX(35deg);
+                transition: 0s;
+            }
+
+            a:hover:before{
+                left: calc(100% + 100px);
+                transition: 0.5s;
+                transition-delay: 0.2s;
+            }
+
+
+
+
+        </style>
+           
+    </head>
+    <body>
+        <div class="container">
+            <p>
+                Les guerriers spartiates sont connus pour leur armée puissante et leur adoration de la « belle mort », 
+                beaucoup prennent en exemple ces guerriers tant dans leur idéologie que dans leur entraînement rigoureux. 
+                Nous ne faisons pas exception, nous ainsi que nos chats.
+            </p>
+            <p>
+                Pourquoi un chat devrait-il apprendre à se battre ? C’est simple, parce que naturellement 
+                le monde a toujours était un lieu cruel, un lieu sans aucune pitié...
+                c’est alors donc avec honneur et fiérté que je reprends les mots de Jet Lee « Je préfère un guerrier 
+                dans un jardin qu’un jardinier dans une guerre ».
+
+            </p>
+            <p>
+                Pourquoi former son chat de combat ? voici un exemple, supposons qu’un individu peu commode fasse son apparition dans votre domicile, 
+                vous êtes prit a la dépourvu, vous ne pouvez pas réagir parce que vous êtes fatigué et qu’il est 3h du matin... MAIS ! votre chat de combat peux lui réagir à la menace grâce à son entrainement digne des forces spéciales !
+            </p>
+            <p>
+                Quel est l’avantage d’un chat de combats par rapport à un chien de combats?
+                En toute simplicité l’agilité, l’intelligence et la diligence, ces trois caractéristiques mettent le chat de combats au-dessus de son concurrent.
+                PS : on a pas le budget pour des chiens...
+            </p>
+            <p>
+                Qu’est ce qu’un chat de combat peut vous apporter ? Tout d’abord de l’argent, drahem en arabe, dinero en espagnol ou encore 
+                ajan en créole haïtien. En effet Monsieur Fadli et ses acolytes organisent souvent des combats clandestins avec de grosses récompenses.
+                Grâce à ces combats votre statut social et celui de votre chat ne cesseront de s'accroitre, qui n'a jamais révé de répondre à la célèbre question " que fais tu dans la vie ? "
+                qu'il était coach de combats de chats catégorie poid moyen ? 
+            </p>
+            <p><a href="Menu.html">Entrer</a></p>
+        </div>
+<header>
+    <h1>Sparta Chat</h1>
+    <p>Make your own warrior</p>
+    
+</header>
+
+    </body>
+</html>
